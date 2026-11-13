@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #F9FAFB;
+  color: #111827;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #93C5FD;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
+
+/* Reusable component classes */
+@layer components {
+
+  /* Primary button */
+  .btn-primary {
+    @apply bg-primary-500 text-white px-6 py-3 rounded-xl font-semibold
+           hover:bg-primary-600 active:scale-95
+           transition-all duration-200
+           shadow-button hover:shadow-lg;
+  }
+
+  /* Secondary/outline button */
+  .btn-secondary {
+    @apply border-2 border-primary-500 text-primary-500 px-6 py-3 rounded-xl font-semibold
+           hover:bg-primary-50 active:scale-95
+           transition-all duration-200;
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply text-gray-600 px-4 py-2 rounded-lg font-medium
+           hover:bg-gray-100 active:scale-95
+           transition-all duration-200;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-white rounded-2xl shadow-card
+           hover:shadow-card-hover hover:-translate-y-1
+           transition-all duration-300;
+  }
+
+  /* Input field */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200
+           focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100
+           transition-all duration-200 bg-white text-gray-900
+           placeholder-gray-400;
+  }
+
+  /* Badge */
+  .badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-blue {
+    @apply badge bg-primary-100 text-primary-700;
+  }
+
+  .badge-green {
+    @apply badge bg-green-100 text-green-700;
+  }
+
+  .badge-red {
+    @apply badge bg-red-100 text-red-700;
+  }
+
+  .badge-yellow {
+    @apply badge bg-yellow-100 text-yellow-700;
+  }
+
+  /* Section title */
+  .section-title {
+    @apply text-2xl font-bold text-gray-900;
+  }
+
+  /* Page container */
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+}

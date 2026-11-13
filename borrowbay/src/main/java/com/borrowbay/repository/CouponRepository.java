@@ -1,0 +1,12 @@
+package com.borrowbay.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.borrowbay.model.Coupon;
+
+public interface CouponRepository extends JpaRepository<Coupon, Long> {
+    Optional<Coupon> findByCode(String code);
+    List<Coupon> findByIsActiveTrue();
+}
